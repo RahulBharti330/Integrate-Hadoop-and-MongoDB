@@ -28,3 +28,20 @@ Download the required JAR files from [https://repo1.maven.org/maven2/org/mongodb
 > C:/hadoop/share/hadoop/common/lib/
 > ```
 
+## E) Integarting Hadoop with MongoDB
+> **Note** Make sure your Hadoop is Running
+1. Open IntelliJ and create a new project with Maven selected.
+2. Add `dependecies` and `build plugins` in pom.xml file from the given pom.xml file
+3. Create a file name `MongoDBInsert.java` in org.example and run the file. (It will upload the data to MongoDB database)
+4. Open cmd and run
+> ```
+> mongosh “your uri of MongoDB”
+> use testDB
+> db.usersNew.find().pretty()
+> ```
+
+5. Create 3 more file named `MongoMapper.java`, `MongoReducer` and `MongoHadoopJob.java` and run the MongoHadoopJob.java file it will read the data from MongoDb and process it after that store it back to MongoDB.
+6.  Run the below command on cmd
+> ```
+> db.processedUsersData.find().pretty()
+> ```
