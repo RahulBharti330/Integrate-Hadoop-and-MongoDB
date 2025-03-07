@@ -29,7 +29,7 @@ Download the required JAR files from [https://repo1.maven.org/maven2/org/mongodb
 > ```
 
 ## E) Add the below properties in `C:\hadoop\etc\hadoop\core-site.xml`
-
+Make sure to replace mongo.input.uri value and mongo.output.uri value by your own MonogoDB data
 ```xml
 <property>
     <name>fs.defaultFS</name>
@@ -48,13 +48,14 @@ Download the required JAR files from [https://repo1.maven.org/maven2/org/mongodb
 
 <property>
     <name>mongo.input.uri</name>
-    <value>mongodb://Rahul:Rahul%4028@cluster0.vblvn.mongodb.net/testDB.users</value>
+    <value>mongodb://<username>:<password>@<cluster-address>/<database>.<collection></value>
 </property>
 
 <property>
     <name>mongo.output.uri</name>
-    <value>mongodb://Rahul:Rahul%4028@cluster0.vblvn.mongodb.net/testDB.processedUsers</value>
+    <value>mongodb://<username>:<password>@<cluster-address>/<database>.<collection></value>
 </property>
+
 ```
 
 ## F) Integarting Hadoop with MongoDB
