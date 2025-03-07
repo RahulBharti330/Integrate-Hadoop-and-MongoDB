@@ -28,7 +28,36 @@ Download the required JAR files from [https://repo1.maven.org/maven2/org/mongodb
 > C:/hadoop/share/hadoop/common/lib/
 > ```
 
-## E) Integarting Hadoop with MongoDB
+## E) Add the below properties in `C:\hadoop\etc\hadoop\core-site.xml`
+
+```xml
+<property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://localhost:9000</value>
+</property>
+
+<property>
+    <name>mongo.input.uri</name>
+    <value>mongodb://localhost:27017/mydatabase.input_collection</value>
+</property>
+
+<property>
+    <name>mongo.output.uri</name>
+    <value>mongodb://localhost:27017/mydatabase.output_collection</value>
+</property>
+
+<property>
+    <name>mongo.input.uri</name>
+    <value>mongodb://Rahul:Rahul%4028@cluster0.vblvn.mongodb.net/testDB.users</value>
+</property>
+
+<property>
+    <name>mongo.output.uri</name>
+    <value>mongodb://Rahul:Rahul%4028@cluster0.vblvn.mongodb.net/testDB.processedUsers</value>
+</property>
+```
+
+## F) Integarting Hadoop with MongoDB
 > **Note** Make sure your Hadoop is Running
 1. Open IntelliJ and create a new project with Maven selected.
 2. Add `dependecies` and `build plugins` in pom.xml file from the given pom.xml file
